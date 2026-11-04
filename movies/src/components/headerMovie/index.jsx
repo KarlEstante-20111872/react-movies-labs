@@ -11,6 +11,7 @@ const MovieHeader = (props) => {
   const movie = props.movie;
   const navigate = useNavigate();
 
+  
   return (
     <Paper 
         component="div" 
