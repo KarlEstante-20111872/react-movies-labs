@@ -1,4 +1,3 @@
-import React from "react";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Paper from "@mui/material/Paper";
@@ -11,7 +10,6 @@ const MovieHeader = (props) => {
   const movie = props.movie;
   const navigate = useNavigate();
 
-  
   return (
     <Paper 
         component="div" 
