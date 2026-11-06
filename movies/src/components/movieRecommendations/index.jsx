@@ -4,6 +4,7 @@ import Spinner from "../spinner";
 import AddToFavoritesIcon from "../cardIcons/addToFavorites";
 import MovieList from "../movieList";
 import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 const MovieRecommendations = (props) => {
   const { data, error, isPending, isError } = useQuery({
@@ -22,9 +23,14 @@ const MovieRecommendations = (props) => {
   const movies = data.results;
 
   return (
-    <Grid container>
-    <MovieList movies={movies} action={(movie) => <AddToFavoritesIcon movie={movie} />} />
-    </Grid>
+    <>
+      <Typography variant="h5" component="h3">
+        Recommended Movies
+      </Typography>
+      <Grid container>
+        <MovieList movies={movies} action={(movie) => <AddToFavoritesIcon movie={movie} />} />
+      </Grid>
+    </>
   );
 };
 
