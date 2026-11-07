@@ -1,6 +1,7 @@
 import { useParams } from 'react-router';
 import MovieDetails from "../components/movieDetails/";
 import MovieRecommendations from "../components/movieRecommendations";
+import MovieCredits from "../components/movieCredits";
 import PageTemplate from "../components/templateMoviePage";
 import { getMovie } from '../api/tmdb-api'
 import { useQuery } from '@tanstack/react-query';
@@ -30,6 +31,7 @@ const MoviePage = (props) => {
           <PageTemplate movie={movie}>
             <MovieDetails movie={movie} />
             <MovieRecommendations movieId={id} />
+            <MovieCredits movieId={id} />
           </PageTemplate>
         </>
       ) : (
