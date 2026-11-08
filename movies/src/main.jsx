@@ -13,6 +13,9 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import PopularMoviesPage from './pages/popularMoviesPage'
 import TopRatedMoviesPage from './pages/topRatedMoviesPage'
 import TrendingMoviesPage from './pages/trendingMoviesPage'
+import {createTheme} from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
 
 
 const queryClient = new QueryClient({
@@ -25,9 +28,25 @@ const queryClient = new QueryClient({
   },
 });
 
+const theme = createTheme({
+  palette: {
+    background: {
+    default: "#34d8c5",
+  },
+  primary: {
+    main: "#5535e6",
+  },
+  secondary: {
+    main: "#5d132d",
+  },
+  },
+});
+
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={theme}>
+      <CssBaseline />
       <BrowserRouter>
         <SiteHeader />
         <MoviesContextProvider>
@@ -45,6 +64,7 @@ const App = () => {
           </Routes>
         </MoviesContextProvider>
       </BrowserRouter>
+      </ThemeProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
